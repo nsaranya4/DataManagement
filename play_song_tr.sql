@@ -90,3 +90,52 @@ VALUES (1000011,'Hisham','Rowley','15-MAR-91','rowleythetroops@gmail.com');
 
 INSERT INTO user_sp(user_sp_id,f_name,l_name,dob,email) 
 VALUES (1000012,'Nyah','Zhang','Yang','13-APR-94','nyah.yang@gmail.com');
+
+--Adding Songs
+INSERT INTO song
+VALUES(1000001,'Riptide',18456923);
+
+INSERT INTO song
+VALUES(1000002,'Therefore I Am',59600459);
+
+INSERT INTO song
+VALUES(1000003,'positions',188428229);
+
+INSERT INTO song
+VALUES(1000004,'For the Night',366869873);
+
+INSERT INTO song
+VALUES(1000005,'Come & Go',305642353);
+
+INSERT INTO song
+VALUES(1000006,'Sweater Weather',675778871);
+
+INSERT INTO song
+VALUES(1000007,'Watermelon Sugar',890919586);
+
+INSERT INTO song
+VALUES(1000008,'Laugh Now Cry Later',298235509);
+
+INSERT INTO song
+VALUES(1000009,'Holiday',18736983);
+
+INSERT INTO song
+VALUES(1000010,'Dynamite',447287514);
+
+INSERT INTO song
+VALUES(1000011,'Lonely',136295492);
+
+INSERT INTO song
+VALUES(1000012,'Tyler Herro',42496255);
+
+INSERT INTO song
+VALUES(1000013,'Holy',210888914);
+
+INSERT INTO song
+VALUES(1000014,'Jingle Bell Rock',279592960);
+
+INSERT INTO song
+VALUES(1000015,'Blinding Lights',1677071791);
+
+
+
