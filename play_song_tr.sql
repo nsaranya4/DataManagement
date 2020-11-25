@@ -62,7 +62,7 @@ INSERT INTO user_sp(user_sp_id,f_name,l_name,dob,email)
 VALUES (1000002,'Yvonne','Doherty','07-SEP-91','yvonne345@yahoo.com');
 
 INSERT INTO user_sp
-VALUES (1000003,'Hareem','Robert','Sawyer','03-JAN-97','h.b.heaton');
+VALUES (1000003,'Hareem','Robert','Sawyer','03-JAN-97','h.b.heaton@utexas.edu');
 
 INSERT INTO user_sp(user_sp_id,f_name,l_name,dob,email) 
 VALUES (1000004,'Lewie','Short','20-JAN-83','lewiethegreat@gmail.com');
