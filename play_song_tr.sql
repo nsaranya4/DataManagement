@@ -1,6 +1,6 @@
--- user plays a song
+-- User plays a song
 
---drops
+-- Drops
 DROP TABLE song_play;
 DROP TABLE user_sp;
 DROP TABLE song;
@@ -10,7 +10,20 @@ DROP SEQUENCE user_sp_id_s;
 DROP SEQUENCE song_id_s;
 DROP SEQUENCE song_play_id_s;
 
---Creates
+-- Create sequences
+CREATE SEQUENCE user_sp_id_s
+START WITH 1000000
+INCREMENT BY 1;
+
+CREATE SEQUENCE song_id_s
+START WITH 1000000
+INCREMENT BY 1;
+
+CREATE SEQUENCE song_play_id_s
+START WITH 1000000
+INCREMENT BY 1;
+
+-- Create tables
 CREATE TABLE song
 (
     song_id         NUMBER(10)          PRIMARY KEY,
@@ -39,16 +52,4 @@ CREATE TABLE song_play
     CONSTRAINT song_play_song_id FOREIGN KEY(song_id) REFERENCES song(song_id),
     CONSTRAINT song_play_user_id FOREIGN KEY(user_id) REFERENCES user_sp(user_sp_id)
 );
-
-CREATE SEQUENCE user_sp_id_s
-START WITH 1000000
-INCREMENT BY 1;
-
-CREATE SEQUENCE song_id_s
-START WITH 1000000
-INCREMENT BY 1;
-
-CREATE SEQUENCE song_play_id_s
-START WITH 1000000
-INCREMENT BY 1;
 
