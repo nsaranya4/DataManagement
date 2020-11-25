@@ -52,4 +52,3 @@ CREATE TABLE song_play
     CONSTRAINT song_play_song_id FOREIGN KEY(song_id) REFERENCES song(song_id),
     CONSTRAINT song_play_user_id FOREIGN KEY(user_id) REFERENCES user_sp(user_sp_id)
 );
-
