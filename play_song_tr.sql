@@ -38,9 +38,9 @@ CREATE TABLE user_sp
     m_name                      VARCHAR(50)         NULL,
     l_name                      VARCHAR(50)         NOT NULL,
     dob                         DATE                NOT NULL,
-    email                       VARCHAR(50)         NOT NULL        UNIQUE,
-    user_sp_followers           NUMBER(10)          NULL,
-    user_sp_following           NUMBER(10)          NULL
+    email                       VARCHAR(50)         NOT NULL        UNIQUE
+    --user_sp_followers           NUMBER(10)          NULL,
+    --user_sp_following           NUMBER(10)          NULL
 );
 
 CREATE TABLE song_play
@@ -88,7 +88,7 @@ VALUES (1000010,'Avni','Gates','25-JUN-01','openthegates@gmail.com');
 INSERT INTO user_sp(user_sp_id,f_name,l_name,dob,email) 
 VALUES (1000011,'Hisham','Rowley','15-MAR-91','rowleythetroops@gmail.com');
 
-INSERT INTO user_sp(user_sp_id,f_name,l_name,dob,email) 
+INSERT INTO user_sp
 VALUES (1000012,'Nyah','Zhang','Yang','13-APR-94','nyah.yang@gmail.com');
 
 --Adding Songs
@@ -105,7 +105,7 @@ INSERT INTO song
 VALUES(1000004,'For the Night',366869873);
 
 INSERT INTO song
-VALUES(1000005,'Come & Go',305642353);
+VALUES(1000005,'Come and Go',305642353);
 
 INSERT INTO song
 VALUES(1000006,'Sweater Weather',675778871);
@@ -138,4 +138,79 @@ INSERT INTO song
 VALUES(1000015,'Blinding Lights',1677071791);
 
 
+-- Insert play song entries
+INSERT INTO song_play
+VALUES(1000001,1000011,1000008,'30-OCT-20');
+
+INSERT INTO song_play
+VALUES(1000002,1000014,1000005,'30-OCT-20');
+
+INSERT INTO song_play
+VALUES(1000003,1000011,1000008,'30-OCT-20');
+
+INSERT INTO song_play
+VALUES(1000004,1000001,1000006,'31-OCT-20');
+
+INSERT INTO song_play
+VALUES(1000005,1000006,1000004,'31-OCT-20');
+
+INSERT INTO song_play
+VALUES(1000006,1000012,1000001,'31-OCT-20');
+
+INSERT INTO song_play
+VALUES(1000007,1000014,1000002,'31-OCT-20');
+
+INSERT INTO song_play
+VALUES(1000008,1000007,1000007,'01-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000009,1000004,1000003,'01-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000010,1000015,1000010,'01-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000011,1000003,1000011,'01-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000012,1000002,1000004,'01-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000013,1000008,1000001,'01-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000014,1000001,1000010,'01-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000015,1000002,1000007,'01-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000016,1000009,1000010,'02-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000017,1000008,1000008,'02-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000018,1000004,1000001,'02-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000019,1000011,1000011,'02-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000020,1000010,1000004,'02-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000021,1000008,1000007,'03-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000022,1000004,1000008,'03-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000023,1000015,1000010,'03-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000024,1000002,1000011,'03-NOV-20');
+
+INSERT INTO song_play
+VALUES(1000025,1000001,1000011,'03-NOV-20');
 
