@@ -44,6 +44,15 @@ CREATE TABLE user_sub (
 );
 
 
+-- Transaction table
+CREATE TABLE user_subscription (
+    user_subscription_id NUMBER(7) NOT NULL PRIMARY KEY,
+    user_id NUMBER(7) NOT NULL REFERENCES user_sub(user_id),
+    subscription_id NUMBER(7) NOT NULL REFERENCES subscription(subscription_id),
+    created_time TIMESTAMP(6) DEFAULT SYSTIMESTAMP NOT NULL
+);
+
+
 -- add subscription
 INSERT INTO subscription
 VALUES(1000001,'Free','Users with this account will be able to listen to music, create playlists, follow artist, etc. but ads will ocassionally be played',0.00);
