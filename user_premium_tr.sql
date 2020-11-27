@@ -19,7 +19,7 @@ START WITH 1000000
 INCREMENT BY 1;
 
 CREATE SEQUENCE user_subscription_id_s
-START WITH 1000000
+START WITH 100000
 INCREMENT BY 1;
 
 -- Create tables
@@ -104,6 +104,7 @@ INSERT INTO user_sub
 VALUES (user_id_s.NEXTVAL,'Nyah','Zhang','Yang','13-APR-94','nyah.yang@gmail.com','New York','NY','2016-02-20 11:11',1000000);
 
 --Insert into user_subscription
+
 INSERT INTO user_subscription
 VALUES(user_subscription_id_s.NEXTVAL,1000003,1000001,'2018-11-12 5:10');
 
