@@ -37,9 +37,9 @@ CREATE TABLE user_sub (
     l_name VARCHAR(15) NOT NULL,  
     birthdate DATE NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,
-    city VARCHAR(30) NOT NULL,
-    st   VARCHAR(2)  NOT NULL,
-    created_at TIMESTAMP(6) DEFAULT SYSTIMESTAMP NOT NULL, 
+    city VARCHAR(30) NULL,
+    st   VARCHAR(2)  NULL,
+    created_at TIMESTAMP(8) NULL, 
     user_subscription_type NUMBER REFERENCES subscription(subscription_id)
 );
 
@@ -63,11 +63,14 @@ VALUES(1000002,'Premium','All functionality with free but with no ads',7.99);
 INSERT INTO subscription
 VALUES(1000003,'Student','Premium account at a discounted rate provided the user verifies student status',4.99);
 
-ALTER SESSION SET NLS_TIMESTAMP_TZ_FORMAT = 'YYYY-MM-DD HH:MI';
+
+ALTER SESSION SET NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI';
+
 
 -- add users
-INSERT INTO user_sub 
-VALUES (1000001,'Jacque','Robert','Sawyer','18-OCT-01','j.sawyer@gmail.com','Austin','TX','2019-10-25 12:56',1000001);
+INSERT INTO user_sub
+VALUES (1000001,'Jacque','Robert','Sawyer','18-OCT-01','gmail.com','Austin','TX','2019-02-01 12:56',1000001);
+
 
 INSERT INTO user_sub(user_id,f_name,l_name,birthdate,email,city,st,created_at,user_subscription_type) 
 VALUES (1000002,'Yvonne','Doherty','07-SEP-91','yvonne345@yahoo.com','Atlanta','GA','2019-08-12 4:45',1000001);
@@ -102,4 +105,21 @@ VALUES (1000011,'Hisham','Rowley','15-MAR-91','rowleythetroops@gmail.com','Bloom
 INSERT INTO user_sub
 VALUES (1000012,'Nyah','Zhang','Yang','13-APR-94','nyah.yang@gmail.com','New York','NY','2016-02-20 11:11',1000001);
 
+--Insert into user_subscription
+INSERT INTO user_subscription
+VALUES(1000001,1000004,1000002,'2018-11-12 5:10');
 
+INSERT INTO user_subscription
+VALUES(1000002,1000005,1000002,'2020-05-23 6:27');
+
+INSERT INTO user_subscription
+VALUES(1000003,1000006,1000002,'2019-03-20 11:25');
+
+INSERT INTO user_subscription
+VALUES(1000004,1000008,1000002,'2020-04-05 11:23');
+
+INSERT INTO user_subscription
+VALUES(1000005,1000010,1000002,'2015-07-31 2:21');
+
+INSERT INTO user_subscription
+VALUES(1000006,1000011,1000002,'2016-02-24 4:20');
