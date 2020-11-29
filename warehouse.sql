@@ -30,6 +30,7 @@ CREATE TABLE user_dw
     st VARCHAR(2) NOT NULL,
     created_at TIMESTAMP(6) DEFAULT SYSTIMESTAMP NOT NULL, 
     user_subscription_type NUMBER REFERENCES subscription_dw(subscription_id),
+    user_subscription_title VARCHAR(15) NOT NULL,
     gender VARCHAR(10) NOT NULL,
     user_type varchar(10) NOT NULL
 );
