@@ -1,4 +1,3 @@
-
 -- Data Warehouse DDL
 
 -- Drops
@@ -31,8 +30,8 @@ CREATE TABLE user_dw
     st VARCHAR(2) NOT NULL,
     created_at TIMESTAMP(6) DEFAULT SYSTIMESTAMP NOT NULL, 
     user_subscription_type NUMBER REFERENCES subscription_dw(subscription_id),
-    gender CHAR(1) NOT NULL,
-    click_count NUMBER DEFAULT 0 NOT NULL
+    gender VARCHAR(10) NOT NULL,
+    user_type varchar(10) NOT NULL
 );
 
 CREATE TABLE song_dw
