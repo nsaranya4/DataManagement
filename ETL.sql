@@ -1,4 +1,3 @@
-
 MERGE INTO subscription_dw dest
 USING (
     SELECT subscription_id, title, descrip, price FROM subscription ) src
@@ -16,6 +15,11 @@ src.price);
 MERGE INTO user_dw dest
 USING (
     SELECT u.user_id, u.f_name,u.m_name, u.l_name, u.birthdate, u.email, u.city, u.st, u.created_at, u.user_subscription_type, 
+        CASE u.user_subscription_type
+            WHEN 1000000 THEN 'Free'
+            WHEN 1000001 THEN 'Premium'
+            WHEN 1000002 THEN 'Student'
+        END AS user_subscription_title,
       CASE a.user_gender 
            WHEN 'F' THEN 'Female' /*Person*/
            WHEN 'M' THEN 'Male' /*Business*/
@@ -37,6 +41,7 @@ city = src.city,
 st = src.st,
 created_at = src.created_at,
 user_subscription_type = src.user_subscription_type,
+user_subscription_title = src.user_subscription_title,
 gender = src.gender,
 user_type = src.user_type
 WHEN NOT MATCHED THEN INSERT VALUES (
@@ -50,6 +55,7 @@ src.city,
 src.st,
 src.created_at,
 src.user_subscription_type,
+src.user_subscription_title,
 src.gender,
 src.user_type);
 
