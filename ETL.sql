@@ -102,7 +102,7 @@ src.user_id,
 src.time_stamp
 );
 
--- Add click extraction 
+-- Ad click extraction 
 MERGE INTO ad_click_ft dest
 USING (
     SELECT ad_click_id, user_id,ad_id, created_time FROM ad_click ) src
@@ -117,3 +117,18 @@ src.user_id,
 src.ad_id,
 src.created_time
 );
+
+--User Subscription extraction
+MERGE INTO user_subscription_ft dest
+USING (
+    SELECT user_subscription_id, user_id, subscription_id, created_time FROM user_subscription ) src
+ON (dest.user_subscription_id = src.user_subscription_id)
+WHEN MATCHED THEN UPDATE SET
+user_id = src.user_id, 
+subscription_id = src.subscription_id, 
+created_time = src.created_time
+WHEN NOT MATCHED THEN INSERT VALUES (
+src.user_subscription_id, 
+src.user_id, 
+src.subscription_id, 
+src.created_time);
